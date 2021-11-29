@@ -12,9 +12,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 start_time = time.time()
 #%cd "C:\Users\v-aniuppu\Documents\Naukri Automation"
-%cd "C:\Users\ROSHAN\Documents\Naukri Automation"
+#%cd "C:\Users\ROSHAN\Documents\Naukri Automation"
 driver = wb.Chrome(r"chromedriver.exe")
-Skillset = ['the']
+Skillset = ['fshgfhs']
 Skillset = [x.lower() for x in Skillset]
 LL = 7
 UL = 15
@@ -51,7 +51,7 @@ for i in range(1,6):
         time.sleep(5)
         try:
             test = driver.find_element_by_xpath('//*[@id="root"]/main/div[2]/div[2]/section[2]')
-            if all(word in test.text.lower() for word in Skillset):
+            if all(word not in test.text.lower() for word in Skillset):
                 Title = driver.find_element_by_xpath('//*[@id="root"]/main/div[2]/div[2]/section[1]/div[1]/div[1]/header/h1')
                 Title = Title.text
                 Title = pd.Series(Title)
